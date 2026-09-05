@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.kodari.automendarmor.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ExperienceOrbEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

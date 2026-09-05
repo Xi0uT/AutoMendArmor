@@ -1,24 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "automendarmor",
+  "id": "priomend",
   "version": "${version}",
-  "name": "Auto Mend Armor",
-  "description": "Repairs equipped Mending armor in lowest-durability-first order up to 400 durability.",
+  "name": "Mending Priority",
+  "description": "Prioritizes the lowest-durability Mending armor piece until it reaches 400 durability.",
   "authors": [
-    "Kodari"
+    "Fallac"
   ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
   "license": "MIT",
+  "icon": "assets/priomend/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.kodari.automendarmor.AutoMendArmor"
+      "com.example.Priomend"
+    ],
+    "client": [
+      "com.example.client.PriomendClient"
     ]
   },
   "mixins": [
-    "automendarmor.mixins.json"
+    "priomend.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.19.2",
+    "fabricloader": ">=0.19.3",
     "minecraft": "~1.21.11",
     "java": ">=21",
     "fabric-api": "*"

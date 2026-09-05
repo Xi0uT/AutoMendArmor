@@ -6,8 +6,9 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.registry.RegistryEntry;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
@@ -86,10 +87,10 @@ public final class ArmorRepairer {
     }
 
     private static RegistryEntry<Enchantment> getMendingEntry(ServerPlayerEntity player) {
-        Optional<? extends RegistryEntry<Enchantment>> entry = player.getEntityWorld()
+        Registry<Enchantment> enchantments = player.getEntityWorld()
                 .getRegistryManager()
-                .get(RegistryKeys.ENCHANTMENT)
-                .getEntry(MENDING_ID);
+                .getOrThrow(RegistryKeys.ENCHANTMENT);
+        Optional<? extends RegistryEntry<Enchantment>> entry = enchantments.getEntry(MENDING_ID);
         return entry.orElse(null);
     }
 }

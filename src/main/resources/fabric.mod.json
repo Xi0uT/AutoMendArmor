@@ -5,7 +5,7 @@
   "name": "Auto Mend Armor",
   "description": "Repairs equipped Mending armor in lowest-durability-first order up to 400 durability.",
   "authors": [
-    "Kodari"
+    "Xi0uT"
   ],
   "license": "MIT",
   "environment": "*",
